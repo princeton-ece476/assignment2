@@ -57,10 +57,12 @@ git remote add release https://github.com/princeton-ece476/assignment2
 ```
 
 ### Running tests
-The adroit head node has only 32 CPUs shared across the entire university, so all testing should be done on the compute nodes. For example, to run the `runtasks` program from Part A, use the following command.
+The adroit head node has only 32 CPUs shared across the entire university, so all testing should be done on the compute nodes. For example, to run the `runtasks_ref_linux` reference program from Part A, use the following command.
 
 ```bash
 # Submit a job to the cluster and get its output directly in this terminal.
+# This command runs the given reference binary. 
+# Do not copy this for testing your own program.
 srun --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks_ref_linux -n 16 mandelbrot_chunked
 ```
 
@@ -110,7 +112,7 @@ The starter code contains a suite of test applications that use your task system
 
 ```shell
 make
-srun --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks_ref_linux -n 16 mandelbrot_chunked
+srun --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks -n 16 mandelbrot_chunked
 ```
 The different tests have different performance characteristics -- some do little work per task, others perform significant amounts of processing.  Some tests create large numbers of tasks per launch, others very few.  Sometimes the tasks in a launch all have similar compute cost.  In others, the cost of tasks in a single bulk launch is variable. We have described most of the tests in `tests/README.md`, but we encourage you to inspect the code in `tests/tests.h` to understand the behavior of all tests in more detail.
 
@@ -208,7 +210,7 @@ You may choose to use `std::thread` (recommended) or `pthread`. Useful reference
 * [`std::mutex`](https://en.cppreference.com/w/cpp/thread/mutex.html)
 * [`std::condition_variable`](https://en.cppreference.com/w/cpp/thread/condition_variable.html)
 
-__Implement your part A implementation in the `part_a/` sub-directory to compare to the correct reference implementation (`part_a/runtasks_ref_*`).__
+__Implement your part A implementation in the `part_a/` sub-directory to compare to the correct reference implementation (`part_a/runtasks_ref_linux`).__
 
 _Pro tip: Notice how the instructions below take the approach of "try the simplest improvement first". Each step increases the complexity of the task execution system's implementation, but on each step along the way you should have a working (fully correct) task runtime system._
 
@@ -349,7 +351,7 @@ As with Part A, we offer you the following tips to get started:
 
 * You can assume the only multithreading going on is the multiple threads created by/used by your implementation. That is, we won't be spawning additional threads and calling your implementation from those threads.
 
-__Implement your part B implementation in the `part_b/` sub-directory to compare to the correct reference implementation (`part_b/runtasks_ref_*`).__
+__Implement your part B implementation in the `part_b/` sub-directory to compare to the correct reference implementation (`part_b/runtasks_ref_linux`).__
 
 ## Grading ##
 
