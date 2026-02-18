@@ -390,7 +390,7 @@ We do not expect anything to be changed outside these:
 #### Writeup Handin ####
 
 Please place the following in `Assignment 2 (Write-Up)`:
-* Your writeup, in a file called `writeup.pdf`. Please make sure both group members' names and PUNet id's are in the document. (if you are a group of two) Also the write-up has to be typed out. Handwritten submissions will be automatically discarded.
+* Your writeup, in a file called `writeup.pdf`. Please make sure both group members' names are in the document (if you are a group of two). The write-up has to be typed out. Handwritten submissions will be automatically discarded.
 
  1. Describe your task system implementation (1 page is fine).  In additional to a general description of how it works, please make sure you address the following questions:
   * How did you decide to manage threads? (e.g., did you implement a thread pool?)
