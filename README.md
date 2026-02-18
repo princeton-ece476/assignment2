@@ -22,7 +22,7 @@ This assignment will require you to:
 
 We recommend reviewing our [C++ synchronization tutorial](tutorial/README.md) for more information on the synchronization primitives in the C++ standard library. Additionally, it may be helpful to look over the [test case descriptions](tests/) to understand the types of workloads your library will support.
 
-Again, thank you Stanford CS149 for the assignment! 
+Again, thank you Stanford CS149 for the assignment! Current Princeton Assignment version credit - Hengrui Zhang, Zixi Li, Yucan Wu!
 
 ### Wait, I Think I've Done This Before? ###
 
@@ -370,21 +370,9 @@ For each test, full performance points will be awarded for implementations withi
 
 ## Handin ##
 
-Please submit your work using [Gradescope](https://www.gradescope.com/).  Your submission should include both your task system code, and a writeup describing your implementation. We will focus on the following five files in the handin:
-
- * part_a/tasksys.cpp
- * part_a/tasksys.h
- * part_b/tasksys.cpp
- * part_b/tasksys.h
- * Your write-up PDF (submit to gradescope write-up assignment)
-
-#### Code Handin ####
-
-
 Handin will be performed via [Gradescope](https://www.gradescope.com/courses/1191059). Only one handin per group is required. However, please make sure that you add your partner's name to the gradescope submission. There are two places you will need to turn in the files on Gradescope: `Assignment 2 (Write-Up)` and `Assignment 2 (Code)`. 
 
-Please place the following in `Assignment 2 (Write-Up)`:
-* Your writeup, in a file called `writeup.pdf`. Please make sure both group members' names and PUNet id's are in the document. (if you are a group of two) Also the write-up has to be typed out. Handwritten submissions will be automatically discarded.
+#### Code Handin ####
 
 For `Assignment 2 (Code)`: Go to your GitHub repository and click "Code -> Download ZIP". Alternatively, you can also let Gradescope do it for you - Click "Submit" on Gradescope, under "Submission Method", choose GitHub, link you account and select your repository.
 
@@ -392,9 +380,17 @@ Before submitting the source files, make sure that all code is compilable and ru
 
 Our grading scripts will run the checker code provided to you in the starter code to determine performance points.  _We will also run your code on other applications that are not provided in the starter code to further test its correctness!_ The grading script will be run *after* the assignment is due.
 
+We do not expect anything to be changed outside these:
+
+ * part_a/tasksys.cpp
+ * part_a/tasksys.h
+ * part_b/tasksys.cpp
+ * part_b/tasksys.h
+
 #### Writeup Handin ####
 
-Please submit a brief writeup to the assignment *Assignment 2 (Write-up)* on Gradescope, addressing the following:
+Please place the following in `Assignment 2 (Write-Up)`:
+* Your writeup, in a file called `writeup.pdf`. Please make sure both group members' names and PUNet id's are in the document. (if you are a group of two) Also the write-up has to be typed out. Handwritten submissions will be automatically discarded.
 
  1. Describe your task system implementation (1 page is fine).  In additional to a general description of how it works, please make sure you address the following questions:
   * How did you decide to manage threads? (e.g., did you implement a thread pool?)
