@@ -63,11 +63,12 @@ The adroit head node has only 32 CPUs shared across the entire university, so al
 # Submit a job to the cluster and get its output directly in this terminal.
 # This command runs the given reference binary. 
 # Do not copy this for testing your own program.
-srun --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks_ref_linux -n 16 mandelbrot_chunked
+srun --cpus-per-task 16 -p class --mem 8GB --time 00:10:00 ./runtasks_ref_linux -n 16 mandelbrot_chunked
 ```
 
 `srun` can be seen a fast shortcut to launching SLURM tasks, which works nicely for debugging.
 - `--ntasks 1` (Omitted): There is one task to execute in this job. Defaults to 1 so we skipped it.
+- `-p class`: Use the class partition. Use when requesting <=32 CPUs - In this assignment you should not need more than 32 cores.
 - `--cpus-per-task 16`: Will allocate 16 CPUs
 - `--mem 8GB`: Will allocate 8GB of memory
 - `--time 00:10:00`: Job has a time limit of 10 minutes. This specific program should not take more than a minute.
@@ -112,7 +113,7 @@ The starter code contains a suite of test applications that use your task system
 
 ```shell
 make
-srun --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks -n 16 mandelbrot_chunked
+srun -p class --cpus-per-task 16 --mem 8GB --time 00:10:00 ./runtasks -n 16 mandelbrot_chunked
 ```
 The different tests have different performance characteristics -- some do little work per task, others perform significant amounts of processing.  Some tests create large numbers of tasks per launch, others very few.  Sometimes the tasks in a launch all have similar compute cost.  In others, the cost of tasks in a single bulk launch is variable. We have described most of the tests in `tests/README.md`, but we encourage you to inspect the code in `tests/tests.h` to understand the behavior of all tests in more detail.
 
@@ -154,7 +155,7 @@ optional arguments:
 It produces a detailed performance report that looks like this:
 
 ```bash
-$ srun --nodes=1 --ntasks=1 --cpus-per-task 16 --mem 8GB --time 00:20:00 python3 ../tests/run_test_harness.py -n 16 -t super_light super_super_light
+$ srun -p class --nodes=1 --ntasks=1 --cpus-per-task 16 --mem 8GB --time 00:20:00 python3 ../tests/run_test_harness.py -n 16 -t super_light super_super_light
 runtasks_ref
 Linux x86_64
 ================================================================================
